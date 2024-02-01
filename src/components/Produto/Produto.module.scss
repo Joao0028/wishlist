@@ -1,0 +1,10 @@
+#ProdutoStyles{
+    -webkit-box-shadow: 3px 4px 7px 0px rgba(0,0,0,0.49);
+    -moz-box-shadow: 3px 4px 7px 0px rgba(0,0,0,0.49);
+    box-shadow: 3px 4px 7px 0px rgba(0,0,0,0.49);
+
+    #containerImagem{
+        @apply w-[90%] min-[400px]:max-[500px]:h-[150px] h-[200px] m-auto
+    }
+    @apply max-[400px]:w-[100%] max-[500px]:w-[50%] w-[250px] px-3 py-2
+}

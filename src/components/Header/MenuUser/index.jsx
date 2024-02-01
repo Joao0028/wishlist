@@ -34,15 +34,15 @@ export default function MenuUser() {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        <button onClick={() => setAbreMenuHover(!abreMenuHover)} className={`flex flex-col items-center gap-1 ${abreMenuHover? "mt-[45px]" : ""}`}><FaUserCircle className={`icone text-cor-branco`} /> <GoTriangleUp className={`text-[40px] text-white shadow-lg ${abreMenuHover? "": "hidden"}`}/></button>
+        <span onClick={() => setAbreMenuHover(!abreMenuHover)} className={`flex flex-col items-center gap-1 ${abreMenuHover? "mt-[45px]" : ""}`}><FaUserCircle className={`icone text-cor-branco`} /> <GoTriangleUp className={`text-[40px] text-white shadow-lg ${abreMenuHover? "": "hidden"}`}/></span>
       </MenuButton>
       <Menu placement="bottom-end" sx={{ border: "none", marginTop: 10 }} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} >
-            <div id={styles.MenuUser}>
-                <h2>Entrar</h2>
-                <h2>Minha conta</h2>
-                <h2>Endereços</h2>
-                <h2>Minhas notificações</h2> 
-            </div>
+            <nav id={styles.MenuUser}>
+                <a className="subtitulo" href="#SemRedirecionamento"><h2>Entrar</h2></a>
+                <a className="subtitulo" href="#SemRedirecionamento"><h2>Minha conta</h2></a>
+                <a className="subtitulo" href="#SemRedirecionamento"><h2>Endereços</h2></a>
+                <a className="subtitulo" href="#SemRedirecionamento"><h2>Minhas notificações</h2></a> 
+            </nav>
       </Menu>
     </Dropdown>
   );

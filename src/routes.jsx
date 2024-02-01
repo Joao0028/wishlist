@@ -16,7 +16,7 @@ export default function AppRoutes() {
           <Breadcrumbs />
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/ListaItens" element={<Lista />} />
+              <Route path="/wishlist" element={<Lista />} />
             </Routes>
           
         </Suspense>

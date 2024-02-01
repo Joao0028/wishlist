@@ -9,15 +9,15 @@
         font-family: Source Sans Pro Regular;
     }
 
-    h1 {
+    .titulo {
       font-family: Source Sans Pro bold;
       @apply text-[20px] sm:text-[23px] md:text-[25px] lg:text-[28px] ;
     }
-    h2 {
+    .subtitulo {
       font-family: Source Sans Pro SemiBold;
       @apply text-[16px] sm:text-[16px] md:text-[17px] lg:text-[19px];
     }
-    p {
+    .paragrafo {
       font-family: Source Sans Pro Regular;
       @apply text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px];
     }
