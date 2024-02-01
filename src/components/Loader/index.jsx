@@ -1,5 +1,4 @@
 import styles from "./Loader.module.scss"
-import LoaderMobile from "../../assets/images/NetshoesLoader.jpg"
 
 export default function Loader() {
   return (

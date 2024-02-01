@@ -8,6 +8,8 @@
 ## Bibliotecas usadas:
 - React Router
 - React Icons
+- Headless Ui
+- HeroIcons
 
 ## Rodar projeto
 
