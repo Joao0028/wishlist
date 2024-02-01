@@ -1,9 +1,8 @@
 import styles from "./Produto.module.scss"
 
 export default function Produto({imagem, nomeProduto, valorSemDesconto, valorComDesconto}){
-    return <div className="border" id={styles.ProdutoStyles}>
+    return <div className="border cursor-pointer" id={styles.ProdutoStyles}>
         <div id={styles.containerImagem} style={{backgroundImage: `url(${imagem})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
-
         </div>
         <div>
             <h2 className="subtitulo text-cor-cinzaEscuro">{nomeProduto}</h2>

@@ -6,5 +6,5 @@
     #containerImagem{
         @apply w-[90%] min-[400px]:max-[500px]:h-[150px] h-[200px] m-auto
     }
-    @apply max-[400px]:w-[100%] max-[500px]:w-[50%] w-[250px] px-3 py-2
+    @apply max-[400px]:w-[100%] w-[47%] md:w-[30%] lg:w-[23%] px-3 py-2 lg:max-w-[260px]
 }
