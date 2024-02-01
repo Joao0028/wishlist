@@ -1,3 +1,13 @@
+@import "./variaveis";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base{
+    body{
+        background: $branco;
+        font-family: Source Sans Pro Regular;
+        font-weight: 100;
+        
+    }
+}
