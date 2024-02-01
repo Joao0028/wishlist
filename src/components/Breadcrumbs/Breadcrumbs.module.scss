@@ -1,0 +1,15 @@
+@import "../../styles/variaveis";
+#BreadcrumbsStyles{
+    div{
+        margin-top: 2em;
+        hr{
+            margin-top: 2em;
+        }
+        h2{
+            color: $roxoClaroNetshoes;
+        }
+        #negrito{
+            font-family: Source Sans Pro Bold;
+        }
+    }
+}
