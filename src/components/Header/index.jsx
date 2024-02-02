@@ -11,7 +11,7 @@ export default function Header(){
     <Link to="/" className="flex items-center gap-2"><IoHomeOutline className="icone"/> <h2 className="max-md:hidden subtitulo">Home</h2></Link>
     : <Link to="/wishlist" className="flex items-center gap-2"><FaRegHeart className="icone"/> <h2 className="max-md:hidden subtitulo">Wishlist</h2></Link>
     
-    return <header className="containerPai bg-cor-roxoClaroNetshoes h-[90px] fixed top-0">
+    return <header className="containerPai bg-cor-roxoClaroNetshoes h-[90px] fixed top-0 z-50">
             <section className="container flex justify-between text-cor-branco">
                 <h1 className="w-[160px] h-[79px] flex items-center max-sm:w-[140px]">
                     <img className="w-full" src="//static.netshoes.com.br/2.89.1/netshoesbr/images/logo.png" alt="Nome da Netshoes com letras brancas e em negrito." />
