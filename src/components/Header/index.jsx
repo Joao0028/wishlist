@@ -16,7 +16,7 @@ export default function Header(){
                 <h1 className="w-[160px] h-[79px] flex items-center max-sm:w-[140px]">
                     <img className="w-full" src="//static.netshoes.com.br/2.89.1/netshoesbr/images/logo.png" alt="Nome da Netshoes com letras brancas e em negrito." />
                 </h1>
-                <nav className="flex gap-4 md:gap-6 items-center ">
+                <nav className="flex gap-2 md:gap-6 items-center">
                    {condicaoPath}
                     <div className="flex flex-col">
                         <MenuUser />
