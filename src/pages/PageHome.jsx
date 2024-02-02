@@ -1,40 +1,39 @@
+import { useContext } from "react";
 import Produto from "../components/Produto";
+import axios from "axios";
+import { DadosProduto } from "../context/DadosProduto";
 
-export default function PageHome(){
-    return <section className="containerPai my-6">
+export default function PageHome() {
+    const { dados, setDados } = useContext(DadosProduto);
+    return (
+        <section className="containerPai my-6">
             <div className="container flex flex-wrap justify-between lg:justify-center gap-4 lg:gap-4 xl:gap-10">
-                <Produto 
-                    nomeProduto={"Kit Meia Invisível Olympikus C/ 3 Pares Masculina"}
-                    imagem={"https://static.netshoes.com.br/produtos/kit-meia-invisivel-olympikus-c-3-pares-masculina/06/D22-2077-006/D22-2077-006_zoom1.jpg?ts=1695528264&ims=544x"}
-                />
-                <Produto 
-                    nomeProduto={"Kit Meia Invisível Olympikus C/ 3 Pares Masculina"}
-                    imagem={"https://static.netshoes.com.br/produtos/kit-meia-invisivel-olympikus-c-3-pares-masculina/06/D22-2077-006/D22-2077-006_zoom1.jpg?ts=1695528264&ims=544x"}
-                />
-                <Produto 
-                    nomeProduto={"Kit Meia Invisível Olympikus C/ 3 Pares Masculina"}
-                    imagem={"https://static.netshoes.com.br/produtos/kit-meia-invisivel-olympikus-c-3-pares-masculina/06/D22-2077-006/D22-2077-006_zoom1.jpg?ts=1695528264&ims=544x"}
-                />
-                <Produto 
-                    nomeProduto={"Kit Meia Invisível Olympikus C/ 3 Pares Masculina"}
-                    imagem={"https://static.netshoes.com.br/produtos/kit-meia-invisivel-olympikus-c-3-pares-masculina/06/D22-2077-006/D22-2077-006_zoom1.jpg?ts=1695528264&ims=544x"}
-                />
-                <Produto 
-                    nomeProduto={"Kit Meia Invisível Olympikus C/ 3 Pares Masculina"}
-                    imagem={"https://static.netshoes.com.br/produtos/kit-meia-invisivel-olympikus-c-3-pares-masculina/06/D22-2077-006/D22-2077-006_zoom1.jpg?ts=1695528264&ims=544x"}
-                />
-                <Produto 
-                    nomeProduto={"Kit Meia Invisível Olympikus C/ 3 Pares Masculina"}
-                    imagem={"https://static.netshoes.com.br/produtos/kit-meia-invisivel-olympikus-c-3-pares-masculina/06/D22-2077-006/D22-2077-006_zoom1.jpg?ts=1695528264&ims=544x"}
-                />
-                <Produto 
-                    nomeProduto={"Kit Meia Invisível Olympikus C/ 3 Pares Masculina"}
-                    imagem={"https://static.netshoes.com.br/produtos/kit-meia-invisivel-olympikus-c-3-pares-masculina/06/D22-2077-006/D22-2077-006_zoom1.jpg?ts=1695528264&ims=544x"}
-                />
-                <Produto 
-                    nomeProduto={"Kit Meia Invisível Olympikus C/ 3 Pares Masculina"}
-                    imagem={"https://static.netshoes.com.br/produtos/kit-meia-invisivel-olympikus-c-3-pares-masculina/06/D22-2077-006/D22-2077-006_zoom1.jpg?ts=1695528264&ims=544x"}
-                />
-        </div>
-    </section>
+                {dados.map((dadosProduto) => (
+                    <Produto
+                        imagem={dadosProduto.imagem}
+                        nomeProduto={dadosProduto.nomeProduto}
+                        key={dadosProduto.id}
+                        funcaoFavoritar={() => {
+                            axios
+                                .put(`http://localhost:3001/${dadosProduto._id}`, { favoritado: !dadosProduto.favoritado })
+                                .then(() => {
+                                    // Atualize o estado local usando o setDados do contexto
+                                    setDados((prevDados) => {
+                                        const updatedData = [...prevDados];
+                                        const index = updatedData.findIndex((item) => item._id === dadosProduto._id);
+                                        if (index !== -1) {
+                                            updatedData[index] = { ...updatedData[index], favoritado: !dadosProduto.favoritado };
+                                        }
+                                        return updatedData;
+                                    });
+                                })
+                                .catch((error) => {
+                                    console.error('Erro ao atualizar favorito:', error.message);
+                                });
+                        }}
+                    />
+                ))}
+            </div>
+        </section>
+    );
 }

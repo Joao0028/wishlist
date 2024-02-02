@@ -9,6 +9,11 @@
         font-family: Source Sans Pro Regular;
     }
 
+    body {
+    touch-action: pan-x pan-y;
+    overscroll-behavior: none;
+    }
+
     .titulo {
       font-family: Source Sans Pro bold;
       @apply text-[20px] sm:text-[23px] md:text-[25px] lg:text-[28px] ;

@@ -5,16 +5,22 @@ import { AiOutlineClose } from "react-icons/ai";
 import { FaRegHeart, FaHeart} from "react-icons/fa";
 
 
-export default function Produto({imagem, nomeProduto, tipoDeBotao}){
+export default function Produto({imagem, nomeProduto, tipoDeBotao, funcaoFavoritar}){
 
     const [estadoFavoritar, setEstadoFavoritar] = React.useState(false)
 
     const condicaoFavoritado = estadoFavoritar? "bg-red-500" : "lg:hover:bg-red-500 bg-zinc-500"
     const condicaoIcone = estadoFavoritar?  <FaHeart className="icone"/> : <FaRegHeart className="icone"/>
 
+    const mudaFavoritoLocal = () => {
+        setEstadoFavoritar(!estadoFavoritar)
+
+        funcaoFavoritar();
+    }
+
     const condicaoBotao = tipoDeBotao == undefined ? 
-    <button onClick={() => setEstadoFavoritar(!estadoFavoritar)} className={`${condicaoFavoritado}`} id={styles.botaoFavoritar} >{condicaoIcone}</button>:
-    <button onClick={() => setEstadoFavoritar(false)} id={styles.botaoExcluir} ><AiOutlineClose className="icone"/></button>
+    <button onClick={mudaFavoritoLocal} className={`${condicaoFavoritado}`} id={styles.botaoFavoritar} >{condicaoIcone}</button>:
+    <button onClick={mudaFavoritoLocal} id={styles.botaoExcluir} ><AiOutlineClose className="icone"/></button>
 
     return <div className="border cursor-pointer" id={styles.ProdutoStyles}>
         <div id={styles.containerImagem} style={{backgroundImage: `url(${imagem})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
