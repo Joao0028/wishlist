@@ -6,9 +6,9 @@ import axios from "axios";
 export default function Wishlist(){
     const { dados, setDados } = useContext(DadosProduto);
     const favoritados = dados.filter(produto => (produto.favoritado == true))
-    
+
     return <section className="containerPai my-6">
-            <div className="container flex flex-wrap justify-between lg:justify-center gap-4 lg:gap-10">
+            <div className="container flex flex-wrap justify-center gap-4 lg:gap-6 xl:gap-10">
             {favoritados.map((dadosProduto) => (
                     <Produto
                         imagem={dadosProduto.imagem}

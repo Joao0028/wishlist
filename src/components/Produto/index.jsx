@@ -3,18 +3,14 @@ import * as React from 'react';
 import EstrelaAvaliativa from "./EstrelaAvaliativa";
 import { AiOutlineClose } from "react-icons/ai";
 import { FaRegHeart, FaHeart} from "react-icons/fa";
+import { DadosProduto } from "../../context/DadosProduto";
 
 
-export default function Produto({imagem, nomeProduto, tipoDeBotao, funcaoFavoritar}){
-
-    const [estadoFavoritar, setEstadoFavoritar] = React.useState(false)
-
-    const condicaoFavoritado = estadoFavoritar? "bg-red-500" : "lg:hover:bg-red-500 bg-zinc-500"
-    const condicaoIcone = estadoFavoritar?  <FaHeart className="icone"/> : <FaRegHeart className="icone"/>
+export default function Produto({imagem, nomeProduto, tipoDeBotao, funcaoFavoritar, estadoFavoritado}){
+    const condicaoFavoritado = estadoFavoritado? "bg-red-500" : "lg:hover:bg-red-500 bg-zinc-500"
+    const condicaoIcone = estadoFavoritado?  <FaHeart className="icone"/> : <FaRegHeart className="icone"/>
 
     const mudaFavoritoLocal = () => {
-        setEstadoFavoritar(!estadoFavoritar)
-
         funcaoFavoritar();
     }
 

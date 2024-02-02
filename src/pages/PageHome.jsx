@@ -7,12 +7,13 @@ export default function PageHome() {
     const { dados, setDados } = useContext(DadosProduto);
     return (
         <section className="containerPai my-6">
-            <div className="container flex flex-wrap justify-between lg:justify-center gap-4 lg:gap-4 xl:gap-10">
+            <div className="container flex flex-wrap justify-center gap-4 lg:gap-6 xl:gap-10">
                 {dados.map((dadosProduto) => (
                     <Produto
                         imagem={dadosProduto.imagem}
                         nomeProduto={dadosProduto.nomeProduto}
                         key={dadosProduto.id}
+                        estadoFavoritado={dadosProduto.favoritado}
                         funcaoFavoritar={() => {
                             axios
                                 .put(`http://localhost:3001/${dadosProduto._id}`, { favoritado: !dadosProduto.favoritado })
