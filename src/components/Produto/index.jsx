@@ -3,14 +3,21 @@ import * as React from 'react';
 import EstrelaAvaliativa from "./EstrelaAvaliativa";
 import { AiOutlineClose } from "react-icons/ai";
 import { FaRegHeart, FaHeart} from "react-icons/fa";
+import favoritado from "../Toastys/favoritado";
+import desfavoritado from "../Toastys/desfavoritado";
 
-
-export default function Produto({imagem, nomeProduto, tipoDeBotao, funcaoFavoritar, estadoFavoritado}){
+export default function Produto({imagem, nomeProduto, tipoDeBotao, funcaoFavoritar, estadoFavoritado, tipoProduto}){
     const condicaoFavoritado = estadoFavoritado? "bg-red-500" : "lg:hover:bg-red-500 bg-zinc-500"
-    const condicaoIcone = estadoFavoritado?  <FaHeart className="icone"/> : <FaRegHeart className="icone"/>
+    const condicaoIcone = estadoFavoritado ? <FaHeart className="icone"/> : <FaRegHeart className="icone"/>
+    const mensagemToasty = estadoFavoritado ? desfavoritado : favoritado
 
-    const mudaFavoritoLocal = () => {
-        funcaoFavoritar();
+    const mudaFavoritoLocal = async () => {
+        try {
+            await funcaoFavoritar();
+            mensagemToasty(tipoProduto)
+        } catch (error) {
+            console.error('Erro ao executar a função de favoritar:', error);
+        }
     }
 
     const condicaoBotao = tipoDeBotao == undefined ? 

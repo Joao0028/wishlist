@@ -18,6 +18,7 @@ export default function PageHome() {
                     nomeProduto={dadosProduto.nomeProduto}
                     key={dadosProduto.id}
                     estadoFavoritado={dadosProduto.favoritado}
+                    tipoProduto={dadosProduto.tipo}
                     funcaoFavoritar={() => {
                         axios
                             .put(`http://localhost:3001/${dadosProduto._id}`, { favoritado: !dadosProduto.favoritado })
