@@ -3,7 +3,6 @@ import * as React from 'react';
 import EstrelaAvaliativa from "./EstrelaAvaliativa";
 import { AiOutlineClose } from "react-icons/ai";
 import { FaRegHeart, FaHeart} from "react-icons/fa";
-import { DadosProduto } from "../../context/DadosProduto";
 
 
 export default function Produto({imagem, nomeProduto, tipoDeBotao, funcaoFavoritar, estadoFavoritado}){

@@ -1,0 +1,14 @@
+.containerErrors {
+  @apply flex justify-center items-center flex-col gap-12 my-12;
+
+  img {
+    transition: all 2s ease;
+    transform-origin: center;
+    @apply w-[70%] max-w-[600px]
+  }
+  @media (min-width:1024px) {
+    img:hover {
+        transform: scale(1.1);
+      }
+  }
+}

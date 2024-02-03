@@ -38,4 +38,8 @@
     .container{
         @apply w-[90%] max-w-[1200px] 2xl:max-w-[1300px];
     }
+
+    .estilosLista{
+      @apply flex flex-wrap justify-center gap-4 lg:gap-6 xl:gap-10
+    }
 }

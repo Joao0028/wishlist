@@ -7,7 +7,7 @@ A Wishlist é uma lista de desejos, onde o cliente pode adicionar e remover prod
 Este é o repositório do Front end da Wishlist, que foi feito com React.js. Para que funcione corretamente é necessário inicializar a <a href="https://github.com/Joao0028/api-wishlist" target="_blank">API feita em Nodejs</a> em conjunto com está aplicação.
 O projeto já está com o visual pronto, e seguindo o modelo passado. Porém ainda precisam ser feitos testes unitários para garantir que esta funcionando corretamente e finalizar o projeto.
 
-### Technologias utilizadas:
+### Principais Technologias utilizadas:
 - Reactjs
 - Tailwind
 - Javascript
