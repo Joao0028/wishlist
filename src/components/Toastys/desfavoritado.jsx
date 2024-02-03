@@ -3,7 +3,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 export default function desfavoritado(tipoProduto){
-    toast.info(`${tipoProduto} removido da Wishlist!`, {
+    toast.info(`${tipoProduto} removido(a) da Wishlist!`, {
         position: "top-right",
         autoClose: 3000,
         hideProgressBar: false,
@@ -12,5 +12,10 @@ export default function desfavoritado(tipoProduto){
         draggable: true,
         progress: undefined,
         theme: "light",
+        style:{
+            color: "#333333",
+            fontFamily: "Source Sans Pro SemiBold"
+        },
+        icon: <img src="/logo_netshoes.png" alt="Logo da nethshoes"  className='rounded-sm'/>
     })
 }

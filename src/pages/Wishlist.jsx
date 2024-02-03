@@ -12,7 +12,8 @@ export default function Wishlist() {
 
   useEffect(() => {
     if (dados.length == 0) {
-      return setResposta(<Errors erro={1} />);
+      setResposta(<Errors erro={1} />)
+      return;
     } else if (dados.length > 0 && favoritados.length == 0) {
       return setResposta(<Errors erro={2} />);
     } else {

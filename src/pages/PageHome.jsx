@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import {  useContext, useEffect, useMemo, useState } from "react";
 import Produto from "../components/Produto";
 import axios from "axios";
 import { DadosProduto } from "../context/DadosProduto";
@@ -10,9 +10,10 @@ export default function PageHome() {
 
     useEffect(() => {
         if(dados.length == 0){
-            return setResposta(<Errors erro={1}/>)
+            setResposta(<Errors erro={1}/>)
+            return;
         } else {
-            return setResposta(dados.length === 0? <h2 className="subtitulo text-center">Você precisa estar iniciando a API para que funcione corretamente.</h2> : dados.map((dadosProduto) => (
+            return setResposta(dados.map((dadosProduto) => (
                 <Produto
                     imagem={dadosProduto.imagem}
                     nomeProduto={dadosProduto.nomeProduto}
