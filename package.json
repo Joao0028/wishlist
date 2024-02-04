@@ -4,10 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --host",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "react-scripts start",
+    "dev": "vite --host",
+    "start-both": "concurrently \"(cd ./api-wishlist/src && node index.js)\" \"npm run dev\""
   },
   "dependencies": {
     "@emotion/react": "^11.11.3",
