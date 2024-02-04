@@ -16,6 +16,9 @@ export default function desfavoritado(tipoProduto){
             color: "#333333",
             fontFamily: "Source Sans Pro SemiBold"
         },
+        progressStyle: {
+            background: "#5a2d82"
+        },
         icon: <img src="/logo_netshoes.png" alt="Logo da nethshoes"  className='rounded-sm'/>
     })
 }

@@ -5,6 +5,7 @@ import axios from "axios";
 import Errors from "../components/Errors";
 
 export default function Wishlist() {
+  document.title = "Wishlist"
   const { dados, setDados } = useContext(DadosProduto);
   const favoritados = dados.filter((produto) => produto.favoritado == true);
 

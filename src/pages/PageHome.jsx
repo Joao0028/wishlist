@@ -5,6 +5,7 @@ import { DadosProduto } from "../context/DadosProduto";
 import Errors from "../components/Errors";
 
 export default function PageHome() {
+    document.title = "Home"
     const { dados, setDados } = useContext(DadosProduto);
     const [resposta, setResposta] = useState(null)
 
