@@ -1,27 +1,39 @@
-import { FaRegHeart} from "react-icons/fa";
+import { FaRegHeart } from "react-icons/fa";
 import { IoHomeOutline } from "react-icons/io5";
-import MenuUser from "./MenuUser";
 import { Link, useLocation } from "react-router-dom";
+import styles from "./Header.module.scss";
+import MenuUser from "./MenuUser";
 
-export default function Header(){
+export default function Header() {
+    const pathAtual = useLocation().pathname;
+    const condicaoPath = pathAtual === "/wishlist" 
+    ? 
+    <Link to="/" id={styles.linkHeader}>
+      <IoHomeOutline className="icone"/> 
+      <h2 className="max-md:hidden subtitulo">Home</h2>
+    </Link>
+    : 
+    <Link to="/wishlist" id={styles.linkHeader}>
+      <FaRegHeart className="icone"/> 
+      <h2 className="max-md:hidden subtitulo">Wishlist</h2>
+    </Link>
 
-    const location = useLocation();
-    const pathAtual = location.pathname
-    const condicaoPath = pathAtual === "/wishlist" ? 
-    <Link to="/" className="flex items-center gap-2"><IoHomeOutline className="icone"/> <h2 className="max-md:hidden subtitulo">Home</h2></Link>
-    : <Link to="/wishlist" className="flex items-center gap-2"><FaRegHeart className="icone"/> <h2 className="max-md:hidden subtitulo">Wishlist</h2></Link>
-    
-    return <header className="containerPai bg-cor-roxoClaroNetshoes h-[90px] fixed top-0 z-50">
-            <section className="container flex justify-between text-cor-branco">
-                <h1 className="w-[160px] h-[79px] flex items-center max-sm:w-[140px]">
-                    <img className="w-full" src="//static.netshoes.com.br/2.89.1/netshoesbr/images/logo.png" alt="Nome da Netshoes com letras brancas e em negrito." />
-                </h1>
-                <nav className="flex gap-2 md:gap-6 items-center">
-                   {condicaoPath}
-                    <div className="flex flex-col">
-                        <MenuUser />
-                    </div>
-                </nav>
-            </section>
+  return (
+    <header className="containerPai" id={styles.headerStyles}>
+      <section className="container">
+        <h1>
+          <img
+            src="//static.netshoes.com.br/2.89.1/netshoesbr/images/logo.png"
+            alt="Nome da Netshoes com letras brancas e em negrito."
+          />
+        </h1>
+        <nav>
+          {condicaoPath}
+          <div>
+            <MenuUser />
+          </div>
+        </nav>
+      </section>
     </header>
+  );
 }

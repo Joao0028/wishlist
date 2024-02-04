@@ -3,43 +3,43 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
-    body{
-        background: $branco;
-        font-family: Source Sans Pro Regular;
-    }
+@layer base {
+  body {
+    background: $branco;
+    font-family: Source Sans Pro Regular;
+  }
 
-    body {
+  body {
     touch-action: pan-x pan-y;
     overscroll-behavior: none;
-    }
+  }
 
-    .titulo {
-      font-family: Source Sans Pro bold;
-      @apply text-[20px] sm:text-[23px] md:text-[25px] lg:text-[28px] ;
-    }
-    .subtitulo {
-      font-family: Source Sans Pro SemiBold;
-      @apply text-[16px] sm:text-[16px] md:text-[17px] lg:text-[19px];
-    }
-    .paragrafo {
-      font-family: Source Sans Pro Regular;
-      @apply text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px];
-    }
+  .titulo {
+    font-family: Source Sans Pro bold;
+    @apply text-[20px] sm:text-[23px] md:text-[25px] lg:text-[28px];
+  }
+  .subtitulo {
+    font-family: Source Sans Pro SemiBold;
+    @apply text-[16px] sm:text-[16px] md:text-[17px] lg:text-[19px];
+  }
+  .paragrafo {
+    font-family: Source Sans Pro Regular;
+    @apply text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px];
+  }
 }
 
 @layer components {
-    .icone{
-      @apply text-[25px]
-    }
-    .containerPai{
-        @apply flex justify-center w-full items-center;
-    }
-    .container{
-        @apply w-[90%] max-w-[1200px] 2xl:max-w-[1300px];
-    }
+  .icone {
+    @apply text-[25px];
+  }
+  .containerPai {
+    @apply flex justify-center w-full items-center;
+  }
+  .container {
+    @apply w-[90%] max-w-[1200px] 2xl:max-w-[1300px];
+  }
 
-    .estilosLista{
-      @apply flex flex-wrap justify-center gap-4 lg:gap-6 xl:gap-10
-    }
+  .estilosLista {
+    @apply flex flex-wrap justify-center gap-4 lg:gap-6 xl:gap-10;
+  }
 }

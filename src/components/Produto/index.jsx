@@ -21,15 +21,15 @@ export default function Produto({imagem, nomeProduto, tipoDeBotao, funcaoFavorit
     }
 
     const condicaoBotao = tipoDeBotao == undefined ? 
-    <button onClick={mudaFavoritoLocal} className={`${condicaoFavoritado}`} id={styles.botaoFavoritar} >{condicaoIcone}</button>:
-    <button onClick={mudaFavoritoLocal} id={styles.botaoExcluir} ><AiOutlineClose className="icone"/></button>
+    <button title="Favoritar" onClick={mudaFavoritoLocal} className={`${condicaoFavoritado}`} id={styles.botaoFavoritar} >{condicaoIcone}</button>:
+    <button title="Desfavoritar" onClick={mudaFavoritoLocal} id={styles.botaoExcluir} ><AiOutlineClose className="icone"/></button>
 
     return <div className="border cursor-pointer" id={styles.ProdutoStyles}>
-        <div id={styles.containerImagem} style={{backgroundImage: `url(${imagem})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
+        <div data-testid="imagem-produto" id={styles.containerImagem} style={{backgroundImage: `url(${imagem})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
             {condicaoBotao}
         </div>
         <div>
-            <h2 className="subtitulo text-cor-cinzaEscuro">{nomeProduto}</h2>
+            <h2 className="subtitulo text-cor-cinzaEscuro" data-testid="nome-produto">{nomeProduto}</h2>
             <EstrelaAvaliativa />
             <p className="paragrafo line-through text-cor-cinzaClaro">R$229,29</p>
             <h2 className="titulo text-cor-roxoClaroNetshoes">R$150,00</h2>

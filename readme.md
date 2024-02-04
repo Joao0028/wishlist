@@ -3,7 +3,7 @@ A Wishlist é uma lista de desejos, onde o cliente pode adicionar e remover prod
 
 
 ### Status do projeto
-O projeto já está com o visual pronto, e seguindo o modelo passado. Porém ainda precisam ser feitos testes unitários para garantir que esta funcionando corretamente antes de finalizar o projeto.
+O projeto já está com o visual pronto, e seguindo o modelo passado. Porém ainda precisam ser feitos testes unitários na API.
 
 ### Principais Technologias utilizadas:
 - Reactjs
@@ -13,6 +13,8 @@ O projeto já está com o visual pronto, e seguindo o modelo passado. Porém ain
 - Jest e React Testing Library
 
 ### Como rodar este projeto
+
+- Instale em seu computador o NodeJS (preferência pela versão LTS) disponível no site https://nodejs.org/en.
 
 ```
 # Clone o Repositório
@@ -27,6 +29,12 @@ npm install
 ```
 # Inicie
 npm run start-both
+```
+
+### Como rodar os testes do Front
+
+```
+npm test
 ```
 
 ### Importante!

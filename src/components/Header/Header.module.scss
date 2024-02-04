@@ -1,0 +1,24 @@
+#headerStyles {
+  @apply bg-cor-roxoClaroNetshoes h-[90px] fixed top-0 z-50;
+
+  #linkHeader{
+    @apply flex items-center gap-2
+  }
+
+  section {
+    @apply flex justify-between text-cor-branco;
+    h1 {
+      @apply w-[160px] h-[79px] flex items-center max-sm:w-[140px];
+    }
+    img {
+      @apply w-full;
+    }
+    nav {
+      @apply flex gap-2 md:gap-6 items-center;
+
+      div {
+        @apply flex flex-col;
+      }
+    }
+  }
+}

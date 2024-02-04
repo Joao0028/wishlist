@@ -4,28 +4,22 @@ $roxoEscuroNetshoes: #370f53;
 $branco: #ffffff;
 $preto: #000000;
 $cinzaEscuro: #333333;
-$cinzaClaro: #4d4d4d;
-$laranja: #ff8b51;
-$azulEscuro: #0091ea;
-$azulClaro: #37aaf3;
-$verdeClaroBackground: #07c278cc;
-$verdeClaroTexto: #10ba78;
 
 // Fonte: Souce Sans Pro - Padrão Netshoes
 @font-face {
-    font-family: 'Source Sans Pro Bold';
-    src: url("/fonts/SourceSansPro-Bold.ttf");
-    font-weight: bold;
+  font-family: "Source Sans Pro Bold";
+  src: url("/fonts/SourceSansPro-Bold.ttf");
+  font-weight: bold;
 }
 
 @font-face {
-    font-family: 'Source Sans Pro SemiBold';
-    src: url("/fonts/SourceSansPro-Semibold.ttf");
-    font-weight: bold;
+  font-family: "Source Sans Pro SemiBold";
+  src: url("/fonts/SourceSansPro-Semibold.ttf");
+  font-weight: bold;
 }
 
 @font-face {
-    font-family: 'Source Sans Pro Regular';
-    src: url("/fonts/SourceSansPro-Regular.ttf");
-    font-weight: normal;
+  font-family: "Source Sans Pro Regular";
+  src: url("/fonts/SourceSansPro-Regular.ttf");
+  font-weight: normal;
 }
