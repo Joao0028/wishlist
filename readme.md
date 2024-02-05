@@ -23,6 +23,18 @@ npm install
 ```
 
 ```
+# Inicie o submodulo da API
+git submodule update --init --recursive
+```
+
+```
+# Instale as dependências da API
+cd api-wishlist
+npm install
+cd ..
+```
+
+```
 # Inicie
 npm run start-both
 ```
